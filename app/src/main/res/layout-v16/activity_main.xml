@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,19 +17,22 @@
         android:text="@string/email_address"
         style="@style/Highlight"/>
     <EditText
-        style="@style/altfont"
+        style="@style/Widget.AppCompat.EditText.Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/yourEmail_domain_com"
         android:autofillHints=""
-        android:inputType="textEmailAddress"/>
+        android:drawableRight="@drawable/ic_baseline_check_circle_24"
+        android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/ic_baseline_check_circle_24" />
+
     <TextView
         style="@style/Highlight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password" />
     <EditText
-        style="@style/altfont"
+        style="@style/Widget.AppCompat.EditText.Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -45,14 +48,26 @@
         android:focusable="true" />
 
 
-    <Button
-        style="@style/buttonLabel"
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/sign_in" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginVertical="@dimen/default_gap"
+        android:background="@drawable/bg_gradient">
+
+        <TextView
+            style="@style/buttonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:text="@string/sign_in" />
+    </LinearLayout>
     <TextView
         style="@style/altfont"
         android:layout_width="wrap_content"
@@ -63,58 +78,57 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginVertical="@dimen/default_gap"
-        android:background="@color/blue">
+        android:background="@drawable/fb_bg_button">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/f"
             android:gravity="end"
-            android:layout_weight="1"
             android:contentDescription="@string/fb_logo"/>
 
         <TextView
             style="@style/buttonLabel"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
+            android:layout_margin="10dp"
             android:background="@android:color/transparent"
+            android:gravity="start"
             android:text="@string/login_with_facebook" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_marginVertical="@dimen/default_gap"
-        android:background="@color/red">
+        android:background="@drawable/gg_bg_button"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/g"
+            android:contentDescription="@string/gg_logo"
             android:gravity="end"
-            android:layout_weight="1"
-            android:contentDescription="@string/gg_logo"/>
+            android:src="@drawable/g" />
 
         <TextView
             style="@style/buttonLabel"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
+            android:layout_margin="10dp"
             android:background="@android:color/transparent"
+            android:gravity="start"
             android:text="@string/login_with_google" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
