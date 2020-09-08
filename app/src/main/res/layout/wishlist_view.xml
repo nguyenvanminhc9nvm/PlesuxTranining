@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wishlist_items"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/default_gap"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_gap"
+        android:layout_toStartOf="@id/wishlist_img"
+        android:layout_toLeftOf="@id/wishlist_img"
+        android:text="@string/learn_python_like_a_professional_start_from_the_basics_and_go_all_the_way_to_creating_your"
+        android:textColor="#B1B9C2"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/see_full_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_description"
+        android:layout_margin="@dimen/default_gap"
+        android:text="@string/see_full_review"
+        android:textColor="#B1B9C2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/see_full_review"
+        android:layout_margin="@dimen/default_gap"
+        android:contentDescription="@string/rating"
+        android:src="@drawable/rating" />
+
+    <ImageView
+        android:id="@+id/wishlist_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/item"
+        android:src="@drawable/code" />
+</RelativeLayout>

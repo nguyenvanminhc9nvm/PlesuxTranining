@@ -20,4 +20,8 @@
     <string name="gg_logo">Google logo</string>
     <string name="sample">Sample</string>
     <string name="item">Item</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="learn_python_like_a_professional_start_from_the_basics_and_go_all_the_way_to_creating_your">Learn Python like a Professional! Start from the basics and go all the way to creating your...</string>
+    <string name="see_full_review"><![CDATA[See full review >]]></string>
+    <string name="rating">rating</string>
 </resources>
