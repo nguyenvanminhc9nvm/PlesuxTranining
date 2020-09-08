@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,25 +15,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email_address"
-        style="@style/Label" />
+        style="@style/Highlight"/>
     <EditText
+        style="@style/Widget.AppCompat.EditText.Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/yourEmail_domain_com"
         android:autofillHints=""
-        android:inputType="textEmailAddress" />
+        android:drawableRight="@drawable/ic_baseline_check_circle_24"
+        android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/ic_baseline_check_circle_24" />
+
     <TextView
+        style="@style/Highlight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password"
-        style="@style/Label" />
+        android:text="@string/password" />
     <EditText
+        style="@style/Widget.AppCompat.EditText.Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:autofillHints=""
         />
     <TextView
+        style="@style/altfont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -42,97 +48,117 @@
         android:focusable="true" />
 
 
-    <Button
-        android:layout_width="200dp"
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
-        android:background="@drawable/bg_gradient"
-        android:textColor="@color/white"
-        android:layout_marginVertical="30dp"
-        android:text="@string/sign_in" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginVertical="@dimen/default_gap"
+        android:background="@drawable/bg_gradient">
+
+        <TextView
+            style="@style/buttonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:text="@string/sign_in" />
+    </LinearLayout>
     <TextView
+        style="@style/altfont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/or" />
 
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginVertical="20dp"
-        android:background="@color/blue"
-        android:layout_gravity="center">
+        android:layout_marginVertical="@dimen/default_gap"
+        android:background="@drawable/fb_bg_button">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/f"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/default_gap"
-            android:contentDescription="@string/fb_logo" />
+            android:gravity="end"
+            android:contentDescription="@string/fb_logo"/>
 
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background=""
-        android:textColor="@color/white"
-        android:layout_marginHorizontal="@dimen/default_gap"
-        android:text="@string/login_with_facebook" />
+        <TextView
+            style="@style/buttonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:text="@string/login_with_facebook" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginVertical="20dp"
+
         android:layout_gravity="center"
-        android:background="@color/red">
+        android:layout_marginVertical="@dimen/default_gap"
+        android:background="@drawable/gg_bg_button"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/g"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/default_gap"
-            android:contentDescription="@string/gg_logo" />
+            android:contentDescription="@string/gg_logo"
+            android:gravity="end"
+            android:src="@drawable/g" />
 
-        <Button
+        <TextView
+            style="@style/buttonLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/default_gap"
-            android:background=""
-            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
             android:text="@string/login_with_google" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginRight="@dimen/default_gap"
-        android:layout_marginEnd="@dimen/default_gap"
-        android:text="@string/new_user"/>
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-        android:layout_marginRight="@dimen/default_gap"
-        android:layout_marginEnd="@dimen/default_gap"
-        android:textColor="@color/peach"
-        android:textStyle="bold"
-        android:text="@string/sign_up" />
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:text="@string/here" />
+        <TextView
+            style="@style/altfont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/default_gap"
+            android:layout_marginEnd="@dimen/default_gap"
+            android:text="@string/new_user"/>
+        <TextView
+            style="@style/Highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/default_gap"
+            android:layout_marginEnd="@dimen/default_gap"
+            android:textColor="@color/peach"
+            android:textStyle="bold"
+            android:text="@string/sign_up" />
+        <TextView
+            style="@style/altfont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/here" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -142,6 +168,7 @@
         android:layout_gravity="center">
 
         <TextView
+            style="@style/altfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -154,6 +181,7 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
+                style="@style/Highlight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -162,12 +190,14 @@
                 android:layout_marginHorizontal="@dimen/default_gap"
                 android:text="@string/terms_of_service" />
             <TextView
+                style="@style/altfont"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/default_gap"
                 android:text="@string/and" />
             <TextView
+                style="@style/Highlight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -179,7 +209,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </LinearLayout>
