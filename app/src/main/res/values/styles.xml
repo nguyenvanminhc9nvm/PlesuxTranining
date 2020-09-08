@@ -6,5 +6,27 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="altfont">
+        <item name="android:fontFamily">@font/opensans</item>
+        <item name="android:textColor">#515C6F</item>
+    </style>
+    <style name="Highlight">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:textColor">#FD8176</item>
+        <item name="android:fontFamily">@font/opensans</item>
+    </style>
+    <style name="buttonLabel">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/bg_gradient</item>
+        <item name="android:fontFamily">@font/opensans</item>
+    </style>
+    <style name="Widget.AppCompat.EditText.Login">
+        <item name="android:fontFamily">@font/opensans</item>
+<!--        <item name="android:backgroundTint">@drawable/bg_gradient</item>-->
+        <item name="android:textColor">#515C6F</item>
+        <item name="colorAccent">@drawable/bg_gradient</item>
+        <item name="colorControlNormal">@drawable/bg_gradient</item>
+        <item name="colorControlActivated">@drawable/bg_gradient</item>
+    </style>
 </resources>
