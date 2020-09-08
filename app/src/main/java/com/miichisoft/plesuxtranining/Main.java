@@ -1,56 +1,81 @@
-package com.miichisoft.plesuxtranining;
+package com.miichisoft.plesuxtranining
 
-import android.os.Bundle;
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.miichisoft.plesuxtranining.adapter.ListAdapter
+import com.miichisoft.plesuxtranining.model.ItemAdapter
+import java.util.*
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+class Main : AppCompatActivity() {
+    private var view: RecyclerView? = null
+    private val adapters: MutableList<ItemAdapter> = ArrayList()
+    private val TAG = "Main"
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "onCreate")
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_recycler_view)
+        view = findViewById(R.id.listView)
+        addList()
+        adapter()
+    }
 
-import com.miichisoft.plesuxtranining.model.ItemAdapter;
-import com.miichisoft.plesuxtranining.adapter.ListAdapter;
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
 
-import java.util.ArrayList;
-import java.util.List;
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+    }
 
-public class Main extends AppCompatActivity {
-    private RecyclerView view;
-    private List<ItemAdapter> adapters = new ArrayList<>();
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
-        view = findViewById(R.id.listView);
-        addList();
-        adapter();
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
 
     //set adapter
-    private void adapter() {
-        ListAdapter listAdapter = new ListAdapter(adapters);
-        view.setHasFixedSize(true);
-        view.setLayoutManager(new LinearLayoutManager(this));
-        view.setAdapter(listAdapter);
+    private fun adapter() {
+        val listAdapter = ListAdapter(adapters)
+        view!!.setHasFixedSize(true)
+        view!!.layoutManager = LinearLayoutManager(this)
+        view!!.adapter = listAdapter
     }
 
     //add to View
-    private void addList() {
-        adapters.add(newAdapter(R.drawable.cachua, "Tomato"));
-        adapters.add(newAdapter(R.drawable.bo, "Avocado"));
-        adapters.add(newAdapter(R.drawable.cam, "Orange"));
-        adapters.add(newAdapter(R.drawable.oi, "Guava"));
-        adapters.add(newAdapter(R.drawable.tao, "Apple"));
-        adapters.add(newAdapter(R.drawable.dau, "Strawberry"));
-        adapters.add(newAdapter(R.drawable.quaxoai, "Mango"));
+    private fun addList() {
+        adapters.add(newAdapter(R.drawable.cachua, "Tomato"))
+        adapters.add(newAdapter(R.drawable.bo, "Avocado"))
+        adapters.add(newAdapter(R.drawable.cam, "Orange"))
+        adapters.add(newAdapter(R.drawable.oi, "Guava"))
+        adapters.add(newAdapter(R.drawable.tao, "Apple"))
+        adapters.add(newAdapter(R.drawable.dau, "Strawberry"))
+        adapters.add(newAdapter(R.drawable.quaxoai, "Mango"))
     }
 
     //create item
-    private ItemAdapter newAdapter(int img, String text) {
-        ItemAdapter itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(img);
-        itemAdapter.setText(text);
-        return itemAdapter;
+    private fun newAdapter(img: Int, text: String): ItemAdapter {
+        val itemAdapter = ItemAdapter()
+        itemAdapter.image = img
+        itemAdapter.text = text
+        return itemAdapter
     }
-
 }
