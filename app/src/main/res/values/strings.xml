@@ -24,4 +24,7 @@
     <string name="learn_python_like_a_professional_start_from_the_basics_and_go_all_the_way_to_creating_your">Learn Python like a Professional! Start from the basics and go all the way to creating your...</string>
     <string name="see_full_review"><![CDATA[See full review >]]></string>
     <string name="rating">rating</string>
+    <string name="tomato">Tomato</string>
+    <string name="fruit">Fruit</string>
+    <string name="tomato_details">The tomato is the edible, often red berry of the plant Solanum lycopersicum, commonly known as a tomato plant. The species originated in western South America and Central America. The Nahuatl word tomatl gave rise to the Spanish word tomate, from which the English word tomato derived.</string>
 </resources>

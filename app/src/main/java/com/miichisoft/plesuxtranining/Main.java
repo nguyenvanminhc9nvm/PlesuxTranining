@@ -1,9 +1,12 @@
 package com.miichisoft.plesuxtranining;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -76,6 +79,8 @@ public class Main extends AppCompatActivity {
         view.setHasFixedSize(true);
         view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(listAdapter);
+        Intent intent = new Intent(Main.this,FruitDetailsActivity.class);
+        startActivity(intent);
     }
 
     //add to View
